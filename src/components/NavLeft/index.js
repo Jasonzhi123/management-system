@@ -29,8 +29,8 @@ export default class NavLeft extends Component {
     return(
       <div>
         <div className="logo">
-          <img src="/assets/logo-ant.svg" alt="" srcset=""/>
-          <h1>Jasoasdfn</h1><h1>Jasoasdfn</h1>
+          <img className="logo-img" src="/assets/logo-ant.svg" alt="" srcset=""/>
+          <h1>Jasoasdfn</h1>
         </div>
         <Menu theme="dark">
           {this.state.menuTreeNode}
