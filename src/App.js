@@ -14,12 +14,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-  
-         <Button type = "primary"
-         onClick = {
-         info
-         } > Display normal message </Button>,
-         );
+        <Button type="primary"
+          onClick={
+            info
+          } > Display normal message </Button>,
+        );
       </div>
     );
   }
