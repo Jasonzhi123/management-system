@@ -1,3 +1,4 @@
+@import './default.less';
 .container {
   .nav-left {
     background: #001529;
@@ -5,9 +6,13 @@
   }
   .main {
     height: calc(100vh);
+    background-color: @colorL;
+    .content {
+      height: calc(69vh);
+      padding: 20px;
+      text-align: center;
+      // background: pink;
+      vertical-align: middle;
+    }
   }
-  .content {
-    padding: 20px;
-  }
-  
 }
