@@ -1,4 +1,6 @@
 @import './default.less';
+@import './loading.less';
+
 .container {
   .nav-left {
     background: #001529;
@@ -7,10 +9,13 @@
   .main {
     height: calc(100vh);
     background-color: @colorL;
+    overflow: auto;
+
     .content {
-      height: calc(69vh);
+      // height: calc(69vh);
+
       padding: 20px;
-      text-align: center;
+      // text-align: center;
       // background: pink;
       vertical-align: middle;
     }
