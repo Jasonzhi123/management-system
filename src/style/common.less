@@ -1,6 +1,5 @@
 @import './default.less';
 @import './loading.less';
-
 .container {
   .nav-left {
     background: #001529;
@@ -10,14 +9,21 @@
     height: calc(100vh);
     background-color: @colorL;
     overflow: auto;
-
     .content {
       // height: calc(69vh);
-
-      padding: 20px;
-      // text-align: center;
+      padding: 20px; // text-align: center;
       // background: pink;
       vertical-align: middle;
     }
+  }
+}
+
+.content-wrap {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  margin-top: -3px;
+  .ant-table-wrapper {
+    margin-left: -1px;
+    margin-right: -2px;
   }
 }
