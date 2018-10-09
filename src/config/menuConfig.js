@@ -78,7 +78,7 @@ const menuList = [{
     key: '/admin/order',
     btnList: [{
         title: '订单详情',
-        key: 'detail'
+        key: '/admin/detail'
       },
       {
         title: '结束订单',
