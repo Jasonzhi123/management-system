@@ -20,7 +20,7 @@ import Rich from './pages/rich';
 import City from './pages/city';
 import Order from './pages/order';
 import Common from './common';
-import OrderDetail from './pages/order/detail'
+import OrderDetail from './pages/order/detail';
 
 export default class IRouter extends Component {
   render() {
@@ -28,34 +28,37 @@ export default class IRouter extends Component {
       <div>
         <HashRouter>
           <App>
-            <Route path="/login" component={Login} />
-            <Route path="/admin" render={() =>
-              <Admin>
-                <Switch>
-                  <Route path="/admin/ui/buttons" component={Bottons}></Route>
-                  <Route path="/admin/ui/modals" component={Modals}></Route>
-                  <Route path="/admin/ui/loadings" component={Loadings}></Route>
-                  <Route path="/admin/ui/messages" component={Messages}></Route>
-                  <Route path="/admin/ui/notice" component={Notice}></Route>
-                  <Route path="/admin/ui/gallery" component={Gallery}></Route>
-                  <Route path="/admin/ui/carousel" component={Carousel}></Route>
-                  <Route path="/admin/ui/tabs" component={Tabs}></Route>
-                  <Route path="/admin/form/login" component={FormLogin}></Route>
-                  <Route path="/admin/form/reg" component={Register}></Route>
-                  <Route path="/admin/table/basic" component={BasicTable}></Route>
-                  <Route path="/admin/table/high" component={HighTable}></Route>
-                  <Route path="/admin/rich" component={Rich}></Route>
-                  <Route path="/admin/city" component={City}></Route>
-                  <Route path="/admin/order" component={Order}></Route>
-                  <Route component={NoMatch} /> 
-                </Switch>
-              </Admin>
-            } />
-            <Route path="/common" render={()=>
-              <Common>
-                <Route path="/common/order/detail:orderId" component={OrderDetail}/>
-              </Common>  
-            } />
+            <Switch>
+              <Route path="/login" component={Login} />
+              <Route path="/common" render={() =>
+                <Common>
+                  <Route path="/order/detail:orderId" component={OrderDetail} />
+                </Common>
+              } />
+              
+              <Route path="/" render={() =>
+                <Admin>
+                  <Switch>
+                    <Route path="/ui/buttons" component={Bottons}></Route>
+                    <Route path="/ui/modals" component={Modals}></Route>
+                    <Route path="/ui/loadings" component={Loadings}></Route>
+                    <Route path="/ui/messages" component={Messages}></Route>
+                    <Route path="/ui/notice" component={Notice}></Route>
+                    <Route path="/ui/gallery" component={Gallery}></Route>
+                    <Route path="/ui/carousel" component={Carousel}></Route>
+                    <Route path="/ui/tabs" component={Tabs}></Route>
+                    <Route path="/form/login" component={FormLogin}></Route>
+                    <Route path="/form/reg" component={Register}></Route>
+                    <Route path="/table/basic" component={BasicTable}></Route>
+                    <Route path="/table/high" component={HighTable}></Route>
+                    <Route path="/rich" component={Rich}></Route>
+                    <Route path="/city" component={City}></Route>
+                    <Route path="/order" component={Order}></Route>
+                    <Route component={NoMatch} />
+                  </Switch>
+                </Admin>
+              } />
+            </Switch>
           </App>
         </HashRouter>
       </div>
