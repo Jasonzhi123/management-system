@@ -83,7 +83,7 @@ const menuList = [
     btnList: [
       {
         title: '订单详情',
-        key: '/order/detail'
+        key: '/detail'
       },
       {
         title: '结束订单',

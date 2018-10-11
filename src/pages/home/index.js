@@ -5,7 +5,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home-wrap">
-        neiafdds
+        欢迎
       </div>
     )
   }

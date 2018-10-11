@@ -1,12 +1,9 @@
 import React from 'react';
 import { Card, Table, Modal, Button, message, Badge } from 'antd';
 import axios from './../../axios/index'
-import Utils from './../../utils/utils';
 export default class BasicTable extends React.Component {
 
-    state = {
-
-    }
+    state = {}
     params = {
         page:1
     }
@@ -24,7 +21,7 @@ export default class BasicTable extends React.Component {
                 }
             }
         }).then((res) => {
-            if (res.code == 0) {
+            if (res.code === '0') {
                 res.result.list.map((item, index) => {
                     item.key = index;
                 })
@@ -44,7 +41,6 @@ export default class BasicTable extends React.Component {
 
     // 删除操作
     handleDelete = (item)=>{
-        let id = item.id;
         Modal.confirm({
             title:'确认',
             content:'您确认要删除此条数据吗？',
@@ -75,7 +71,7 @@ export default class BasicTable extends React.Component {
                 width: 80,
                 dataIndex: 'sex',
                 render(sex) {
-                    return sex == 1 ? '男' : '女'
+                    return sex === 1 ? '男' : '女'
                 }
             },
             {
@@ -153,7 +149,7 @@ export default class BasicTable extends React.Component {
                 width: 80,
                 dataIndex: 'sex',
                 render(sex) {
-                    return sex == 1 ? '男' : '女'
+                    return sex === 1 ? '男' : '女'
                 }
             },
             {
@@ -309,7 +305,7 @@ export default class BasicTable extends React.Component {
                 key: 'sex',
                 dataIndex: 'sex',
                 render(sex) {
-                    return sex == 1 ? '男' : '女'
+                    return sex === 1 ? '男' : '女'
                 }
             },
             {
@@ -383,7 +379,7 @@ export default class BasicTable extends React.Component {
                 title: '性别',
                 dataIndex: 'sex',
                 render(sex) {
-                    return sex == 1 ? '男' : '女'
+                    return sex === 1 ? '男' : '女'
                 }
             },
             {

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Modal } from 'antd';
 
 export default class Axios {
+
   static jsonp(options) {
     return new Promise((resolve, reject) => {
       JsonP(options.url, {
@@ -19,12 +20,12 @@ export default class Axios {
 
   static ajax(options) {
     let loading;
-    if (options.data && options.data.isShowLoading !== false){
-        loading = document.getElementById('ajaxLoading');
-        loading.style.display = 'block';
+    if (options.data && options.data.isShowLoading !== false) {
+      loading = document.getElementById('ajaxLoading');
+      loading.style.display = 'block';
     }
-    let baseUrl = 'https://www.easy-mock.com/mock/5bb3240d02f0ee1663421e35/data';
-    // let baseUrl = 'https://www.easy-mock.com/mock/5a7278e28d0c633b9c4adbd7/api';
+    // let baseUrl = 'https://www.easy-mock.com/mock/5bb3240d02f0ee1663421e35/data';
+    let baseUrl = 'https://www.easy-mock.com/mock/5a7278e28d0c633b9c4adbd7/api';
     return new Promise((resolve, reject) => {
       axios({
         url: options.url,
@@ -36,10 +37,11 @@ export default class Axios {
         if (options.data && options.data.isShowLoading !== false) {
           loading = document.getElementById('ajaxLoading');
           loading.style.display = 'none';
-      }
-        if (response.status == '200') {
+        }
+        
+        if (response.status === 200) {
           let res = response.data;
-          if (res.code == '0') {
+          if (res.code === '0') {
             resolve(res);
           } else {
             Modal.info({
@@ -49,6 +51,10 @@ export default class Axios {
           }
         } else {
           reject(response.data);
+          Modal.info({
+            title: "提示",
+            content: '网络出错'
+          })
         }
       })
     })

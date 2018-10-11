@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import App from './App';
+import Home from './pages/home';
 import Login from './pages/login';
 import Admin from './admin';
 import Bottons from './pages/ui/bottons';
@@ -21,6 +22,7 @@ import City from './pages/city';
 import Order from './pages/order';
 import Common from './common';
 import OrderDetail from './pages/order/detail';
+import User from './pages/user';
 
 export default class IRouter extends Component {
   render() {
@@ -32,13 +34,14 @@ export default class IRouter extends Component {
               <Route path="/login" component={Login} />
               <Route path="/common" render={() =>
                 <Common>
-                  <Route path="/order/detail:orderId" component={OrderDetail} />
+                  <Route path="/common/order/detail/:orderId" component={OrderDetail} />
                 </Common>
               } />
               
               <Route path="/" render={() =>
                 <Admin>
                   <Switch>
+                  <Route path="/home" component={Home}></Route>
                     <Route path="/ui/buttons" component={Bottons}></Route>
                     <Route path="/ui/modals" component={Modals}></Route>
                     <Route path="/ui/loadings" component={Loadings}></Route>
@@ -54,6 +57,7 @@ export default class IRouter extends Component {
                     <Route path="/rich" component={Rich}></Route>
                     <Route path="/city" component={City}></Route>
                     <Route path="/order" component={Order}></Route>
+                    <Route path="/user" component={User}></Route>
                     <Route component={NoMatch} />
                   </Switch>
                 </Admin>

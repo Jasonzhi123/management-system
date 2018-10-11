@@ -128,7 +128,7 @@ export default class BasicTable extends Component {
         key: 'sex',
         dataIndex: 'sex',
         render(sex) {
-          return sex == 1 ? '男' : '女'
+          return sex === 1 ? '男' : '女'
         }
       },
       {

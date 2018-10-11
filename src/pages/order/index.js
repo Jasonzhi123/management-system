@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Card, Button, Table, Form, Select, Modal, message } from 'antd';
+import { Card, Button, Table, Modal } from 'antd';
 import axios from './../../axios/index';
 import Utils from './../../utils/utils';
 import BaseForm from '../../components/BaseForm'
-const FormItem = Form.Item;
-const Option = Select.Option;
 
 export default class Order extends Component {
   state = {}
