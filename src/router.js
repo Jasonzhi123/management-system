@@ -23,6 +23,9 @@ import Order from './pages/order';
 import Common from './common';
 import OrderDetail from './pages/order/detail';
 import User from './pages/user';
+import Bar from './pages/charts/bar/index'
+import Pie from './pages/charts/pie/index'
+import Line from './pages/charts/line/index'
 
 export default class IRouter extends Component {
   render() {
@@ -58,6 +61,10 @@ export default class IRouter extends Component {
                     <Route path="/city" component={City}></Route>
                     <Route path="/order" component={Order}></Route>
                     <Route path="/user" component={User}></Route>
+                    <Route path="/user" component={User}></Route>
+                    <Route path="/charts/bar" component={Bar}></Route>
+                    <Route path="/charts/pie" component={Pie}></Route>
+                    <Route path="/charts/line" component={Line}></Route>
                     <Route component={NoMatch} />
                   </Switch>
                 </Admin>
