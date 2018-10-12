@@ -2,9 +2,8 @@ import React from 'react'
 import { Card } from 'antd'
 import ReactEcharts from 'echarts-for-react';
 import echartTheme from '../echartTheme'
-// import echarts from 'echarts'
 import echarts from 'echarts/lib/echarts'
-// 引入饼图和折线图
+// 引入折线图
 import 'echarts/lib/chart/line'
 // 引入提示框和标题组件
 import 'echarts/lib/component/tooltip';
