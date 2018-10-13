@@ -1,7 +1,7 @@
 # react 后台管理系统
-> react-后台管理系统
+> react-React全家桶+AntD+Echats后台管理系统开发
 
-[Home 主页](https://github.com/Jasonzhi123/management-system)
+[Home 主页](https://system.jasonzhi.cn)
 [Demo 示例](https://system.jasonzhi.cn)
 
   欢迎使用后台管理系统解决方案
@@ -12,13 +12,13 @@
 ```jsn
 22  添加了echats 图标功能
 23  修改echats列表的主题以及内容，填充首页文字内容
+24  添加了权限页面，地图、员工管理页面等
 ```
 
 ## 特点
 + 使用React-Router最新4.0路由
 + 灵活使用React和AntD，实现产品后台的数据管理问题
 + Echarts图表功能实现数据可视化
-+ 
 
 ### 功能模块
 <span style="color: rgb(184,49,47);">备注：项目只引入了ant-design的部分组件，其他的组件antd官网有源码，可以直接复制到项目中使用😁</span>
@@ -58,5 +58,4 @@ yarn run build
 ```
 ### 结尾
 该项目会不定时更新，后续时间会添加更多的模块
-
 当然后续也会添加封装的UI组件

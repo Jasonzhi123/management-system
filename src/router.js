@@ -25,7 +25,9 @@ import OrderDetail from './pages/order/detail';
 import User from './pages/user';
 import Bar from './pages/charts/bar/index'
 import Pie from './pages/charts/pie/index'
-import Line from './pages/charts/line/index'
+import Line from './pages/charts/line/index';
+import Permission from './pages/permission';
+import BikeMap from './pages/map/bikeMap';
 
 export default class IRouter extends Component {
   render() {
@@ -65,6 +67,8 @@ export default class IRouter extends Component {
                     <Route path="/charts/bar" component={Bar}></Route>
                     <Route path="/charts/pie" component={Pie}></Route>
                     <Route path="/charts/line" component={Line}></Route>
+                    <Route path="/permission" component={Permission}></Route>
+                    <Route path="/map/bikeMap" component={BikeMap}></Route>
                     <Route component={NoMatch} />
                   </Switch>
                 </Admin>
