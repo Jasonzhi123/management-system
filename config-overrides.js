@@ -21,5 +21,6 @@ module.exports = override(
     "@style": resolve("src/style"),
     "@utils": resolve("src/utils"),
     "@pages": resolve("src/pages"),
+    "@axios": resolve("src/axios"),
   }),
 );

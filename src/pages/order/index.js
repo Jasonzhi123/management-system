@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Card, Button, Table, Modal } from 'antd';
-import axios from './../../axios/index';
-import Utils from './../../utils/utils';
-import BaseForm from '../../components/BaseForm'
+import axios from '@axios/index';
+import Utils from '@utils/utils';
+import BaseForm from '@components/BaseForm'
 
 export default class Order extends Component {
   state = {}
@@ -21,7 +21,8 @@ export default class Order extends Component {
       list: [{ id: '0', name: '全部' }, { id: '1', name: '北京' }, { id: '2', name: '天津' }, { id: '3', name: '上海' }]
     },
     {
-      type: '时间查询'
+      type: '时间查询',
+      label: '时间选择',
     },
     {
       type: 'SELECT',
@@ -109,6 +110,7 @@ export default class Order extends Component {
             dataSource={this.state.list}
             columns={columns}
             rowSelection={rowSelection}
+            rowKey='id'
             onRow={(record, index) => {
               return {
                 onClick: () => {
@@ -151,7 +153,7 @@ export default class Order extends Component {
       selectedItem: record
     })
   };
-  
+
   openOrderDetail = () => {
     let item = this.state.selectedItem;
     if (!item) {
@@ -165,7 +167,7 @@ export default class Order extends Component {
     window.open(`/#/common/order/detail/${item.id}`, '_blank')
   };
 
-  handleFilter=(params)=>{
+  handleFilter = (params) => {
     this.params = params;
     this.requestList();
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Input, Select, Form, Button, Checkbox, DatePicker } from 'antd'
-import Utils from '../../utils/utils';
+import Utils from '@utils/utils';
 const FormItem = Form.Item;
 
 class FilterForm extends Component {
@@ -20,11 +20,7 @@ class FilterForm extends Component {
     const formItemList = [];
     if (formList && formList.length > 0) {
       formList.forEach((item, i) => {
-        let label = item.label;
-        let field = item.field;
-        let initialValue = item.initialValue || '';
-        let placeholder = item.placeholder;
-        let width = item.width;
+        let { label, field, initialValue = '', placeholder, width } = item;
         if (item.type === '时间查询') {
           const begin_time = <FormItem label="订单时间" key={field}>
             {
@@ -34,7 +30,7 @@ class FilterForm extends Component {
             }
           </FormItem>;
           formItemList.push(begin_time)
-          const end_time = <FormItem label="~" colon={false} key={field}>
+          const end_time = <FormItem label="~" colon={false} key={field + 'end'}>
             {
               getFieldDecorator('end_time')(
                 <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss" />

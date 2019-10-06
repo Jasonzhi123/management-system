@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card } from 'antd';
-import axios from '../../axios';
+import axios from '@axios';
 import './detail.less';
 
 export default class Detail extends Component {

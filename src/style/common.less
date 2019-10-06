@@ -1,5 +1,7 @@
 @import './default.less';
 @import './loading.less';
+@import './public.less';
+@import './reset.css';
 
 .container {
   .nav-left {
@@ -7,14 +9,14 @@
     color: #ffffff;
     background: #001529;
   }
+
   .main {
     height: calc(100vh);
     background-color: @colorL;
     overflow: auto;
+
     .content {
-      // height: calc(69vh);
-      padding: 20px; // text-align: center;
-      // background: pink;
+      padding: 20px;
       vertical-align: middle;
     }
   }
@@ -24,12 +26,14 @@
   background: #ffffff;
   border: 1px solid #e8e8e8;
   margin-top: -3px;
+
   .ant-table-wrapper {
     margin-left: -1px;
     margin-right: -2px;
   }
 }
-.bg{
+
+.bg {
   background: pink;
   height: 100px;
 }

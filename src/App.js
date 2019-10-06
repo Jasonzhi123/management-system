@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Common from './common';
 
-import Login from './pages/login';
 import Router from './router/router';
-import OrderDetail from './pages/order/detail';
 
-import './App.css';
+import Login from '@pages/login';
+import Common from '@pages/layout/common';
+import OrderDetail from '@pages/order/detail';
+import '@style/common.less';
 
 class App extends Component {
   render() {
@@ -23,8 +23,6 @@ class App extends Component {
             <Router></Router>
           </Switch>
         </BrowserRouter >
-
-        {/* {this.props.children} */}
       </div>
     );
   }

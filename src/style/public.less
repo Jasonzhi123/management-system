@@ -1,0 +1,195 @@
+.nobutton {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.nobutton::after {
+  border: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-space-a {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex_1 {
+  flex: 1;
+}
+
+.flex_2 {
+  flex: 2;
+}
+
+.flex_3 {
+  flex: 3;
+}
+
+.flex-pack-j {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-align-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-align-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-c {
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-fixed {
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.ell {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.row-number-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9000;
+}
+
+.flex () {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.alignC () {
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.justifyC () {
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.justifyB () {
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+.justifyS () {
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+}
+
+.center () {
+  .flex();
+  .alignC();
+  .justifyC();
+}
+
+.between () {
+  .flex();
+  .justifyB();
+}
+
+.bc () {
+  .flex();
+  .justifyB();
+  .alignC();
+}
+
+.flexstart () {
+  .flex();
+  .justifyS();
+}
+
+.flexA () {
+  .flex();
+  .alignC();
+}
+
+.borderb () {
+  border-bottom: 1px solid @color-border;
+  /*no*/
+}
+
+.bordert () {
+  border-top: 1px solid @color-border;
+  /*no*/
+}
+
+.textOver () {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wrap () {
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  padding-bottom: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  font-size: 30px;
+  /*px*/
+}

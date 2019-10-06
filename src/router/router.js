@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/home';
-import Admin from '../admin';
+import Content from '../pages/layout/content';
 import Bottons from '../pages/ui/bottons';
 import Modals from "../pages/ui/modals";
 import Loadings from "../pages/ui/loadings";
@@ -30,7 +30,7 @@ export default class IRouter extends Component {
     return (
       <div>
         <Route path="/" render={() =>
-          <Admin>
+          <Content>
             <Switch>
               <Route path="/home" component={Home}></Route>
               <Route path="/ui/buttons" component={Bottons}></Route>
@@ -57,7 +57,7 @@ export default class IRouter extends Component {
               <Route path="/map/bikeMap" component={BikeMap}></Route>
               <Route component={NoMatch} />
             </Switch>
-          </Admin>
+          </Content>
         } />
       </div>
     )
