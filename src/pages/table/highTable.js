@@ -5,9 +5,9 @@ export default class BasicTable extends React.Component {
 
     state = {}
     params = {
-        page:1
+        page: 1
     }
-    componentDidMount(){
+    componentDidMount() {
         this.request();
     }
 
@@ -22,7 +22,7 @@ export default class BasicTable extends React.Component {
             }
         }).then((res) => {
             if (res.code === '0') {
-                res.result.list.map((item, index) => {
+                res.result.list.forEach((item, index) => {
                     item.key = index;
                 })
                 this.setState({
@@ -32,31 +32,31 @@ export default class BasicTable extends React.Component {
         })
     }
 
-    handleChange = (pagination, filters, sorter)=>{
+    handleChange = (pagination, filters, sorter) => {
         console.log("::" + sorter)
         this.setState({
-            sortOrder:sorter.order
+            sortOrder: sorter.order
         })
     }
 
     // 删除操作
-    handleDelete = (item)=>{
+    handleDelete = (item) => {
         Modal.confirm({
-            title:'确认',
-            content:'您确认要删除此条数据吗？',
-            onOk:()=>{
+            title: '确认',
+            content: '您确认要删除此条数据吗？',
+            onOk: () => {
                 message.success('删除成功');
                 this.request();
             }
         })
     }
 
-    render(){
+    render() {
         const columns = [
             {
                 title: 'id',
                 key: 'id',
-                width:80,
+                width: 80,
                 dataIndex: 'id'
             },
             {
@@ -133,7 +133,7 @@ export default class BasicTable extends React.Component {
                 title: 'id',
                 key: 'id',
                 width: 80,
-                fixed:'left',
+                fixed: 'left',
                 dataIndex: 'id'
             },
             {
@@ -312,10 +312,10 @@ export default class BasicTable extends React.Component {
                 title: '年龄',
                 key: 'age',
                 dataIndex: 'age',
-                sorter:(a,b)=>{
+                sorter: (a, b) => {
                     return a.age - b.age;
                 },
-                sortOrder:this.state.sortOrder
+                sortOrder: this.state.sortOrder
             },
             {
                 title: '状态',
@@ -405,7 +405,7 @@ export default class BasicTable extends React.Component {
                 dataIndex: 'interest',
                 render(abc) {
                     let config = {
-                        '1': <Badge status="success" text="成功"/>,
+                        '1': <Badge status="success" text="成功" />,
                         '2': <Badge status="error" text="报错" />,
                         '3': <Badge status="default" text="正常" />,
                         '4': <Badge status="processing" text="进行中" />,
@@ -424,7 +424,7 @@ export default class BasicTable extends React.Component {
             },
             {
                 title: '操作',
-                render:(text,item)=>{
+                render: (text, item) => {
                     return <Button size="small" onClick={(item) => { this.handleDelete(item) }}>删除</Button>
                 }
             }
@@ -437,7 +437,7 @@ export default class BasicTable extends React.Component {
                         columns={columns}
                         dataSource={this.state.dataSource}
                         pagination={false}
-                        scroll={{y:240}}
+                        scroll={{ y: 240 }}
                     />
                 </Card>
                 <Card title="左侧固定" style={{ margin: '10px 0' }}>

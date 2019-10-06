@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Card, Button, Form, Input, Select, Tree, Transfer, Modal} from 'antd';
+import { Card, Button } from 'antd';
 
 export default class index extends Component {
   render() {

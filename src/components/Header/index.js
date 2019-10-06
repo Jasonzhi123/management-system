@@ -23,20 +23,20 @@ export default class Header extends Component {
     this.getWeatherAPIData();
   }
   render() {
-    const {  menuType } = this.props;
+    const { menuType } = this.props;
     return (
       <div className="header">
         <Row className="header-top">
-        {
+          {
             menuType ?
               <Col span="6" className="logo">
                 <img src="/assets/logo-ant.svg" alt="" />
                 <span>IMooc 通用管理系统</span>
-              </Col>:''
-        }
+              </Col> : ''
+          }
           <Col span={menuType ? 18 : 24}>
             <span>欢迎，{this.state.userName}</span>
-            <a >退出</a>
+            <span >退出</span>
           </Col>
         </Row>
         {

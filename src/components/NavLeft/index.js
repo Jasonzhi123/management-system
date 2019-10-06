@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Menu } from "antd";
-import {NavLink} from 'react-router-dom';
-import MenuConfig from "../../config/menuConfig";
+import { NavLink } from 'react-router-dom';
+import MenuConfig from "@config/menuConfig";
 import './index.less';
 const SubMenu = Menu.SubMenu;
 
 export default class NavLeft extends Component {
-  
-  componentWillMount () {
+
+  componentWillMount() {
     const menuTreeNode = this.renderMenu(MenuConfig);
 
     this.setState({
@@ -15,9 +15,9 @@ export default class NavLeft extends Component {
     })
   }
 
-  renderMenu=(data)=>{
-    return data.map((item)=>{
-      if(item.children){
+  renderMenu = (data) => {
+    return data.map((item) => {
+      if (item.children) {
         return (
           <SubMenu key={item.key} title={item.title}>
             {this.renderMenu(item.children)}
@@ -25,13 +25,13 @@ export default class NavLeft extends Component {
         )
       }
       return <Menu.Item key={item.key} title={item.title}>
-       <NavLink to={item.key}>{item.title}</NavLink>
+        <NavLink to={item.key}>{item.title}</NavLink>
       </Menu.Item>
     })
   }
-  
-  render(){
-    return(
+
+  render() {
+    return (
       <div>
         <div className="logo">
           <img className="logo-img" src="/assets/logo-ant.svg" alt="" />

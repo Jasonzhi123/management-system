@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Input, Select, Form, Button, Checkbox,  DatePicker } from 'antd'
+import { Input, Select, Form, Button, Checkbox, DatePicker } from 'antd'
 import Utils from '../../utils/utils';
 const FormItem = Form.Item;
 

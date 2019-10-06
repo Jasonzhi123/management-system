@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Card, Table, Modal, Button, message } from 'antd';
 import axios from '../../axios';
-import  Utils  from './../../utils/utils';
+import Utils from './../../utils/utils';
 
 
 export default class BasicTable extends Component {
   state = {}
   params = {
-    page:1
-}
+    page: 1
+  }
   componentDidMount() {
     const data = [
       {
@@ -43,7 +43,7 @@ export default class BasicTable extends Component {
       },
     ]
 
-    data.map((item, index) => {
+    data.forEach((item, index) => {
       item.key = index;
     })
 
@@ -55,7 +55,7 @@ export default class BasicTable extends Component {
   }
 
   request = () => {
-    let that=this;
+    let that = this;
     axios.ajax({
       url: '/table/list',
       data: {
@@ -67,15 +67,15 @@ export default class BasicTable extends Component {
     }).then(res => {
       console.log('res :', res);
       if (res.code === 0) {
-        res.result.list.map((item, index) => {
+        res.result.list.forEach((item, index) => {
           item.key = index;
         })
         this.setState({
           dataSource2: res.result.list,
           selectedRowKeys: [],
           selectedItem: "",
-          pagination:Utils.pagination(res,(current)=>{
-            that.params.page=current;
+          pagination: Utils.pagination(res, (current) => {
+            that.params.page = current;
             this.request();
           })
         })
@@ -98,7 +98,7 @@ export default class BasicTable extends Component {
   handleDelete = () => {
     let rows = this.state.selectedRows;
     let ids = [];
-    rows.map((item) => {
+    rows.forEach((item) => {
       ids.push(item.id);
     })
     Modal.confirm({

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row } from "antd";
-import Header from './components/Header';
-import Footer from "./components/Footer";
+import Header from '@components/Header';
+import Footer from "@components/Footer";
 
 export default class Common extends Component {
   render() {
