@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Row, Col } from "antd";
 import axios from '@axios';
 import moment from 'moment';
-
+import { withRouter } from 'react-router';
 import './index.less';
 export default class Header extends Component {
   state = {
@@ -23,6 +23,7 @@ export default class Header extends Component {
     clearInterval(this.timeState)
   }
 
+
   render() {
     const { menuType } = this.props;
     let { sysTime, weather, userName, dayPictureUrl } = this.state
@@ -32,14 +33,14 @@ export default class Header extends Component {
           {
             menuType ?
               <Col span="6" className="logo">
-                <img src="/assets/logo-ant.svg" alt="" />
+                <img src={require("@assets/logo-ant.svg")} alt="" />
                 <span>通用管理系统</span>
               </Col> : ''
           }
           <Col span={menuType ? 18 : 24}>
             <div>
               <span>欢迎，{userName}</span>
-              <span >退出</span>
+              <span onClick={this.signOut.bind(this)}>退出</span>
             </div>
           </Col>
         </Row>
@@ -62,7 +63,7 @@ export default class Header extends Component {
       </div>
     )
   }
-
+  // 获取天气信息
   async getWeatherAPIData() {
     let city = '广州';
     let { status, results } = await axios.jsonp({
@@ -75,5 +76,9 @@ export default class Header extends Component {
         weather: data.weather
       })
     }
+  }
+  // 退出
+  signOut() {
+    // this.props.history.push('/login')
   }
 }

@@ -15,12 +15,14 @@ module.exports = override(
   }),
   addWebpackAlias({
     "@": resolve("src"),
+    "@api": resolve("src/api"),
+    "@assets": resolve("src/assets"),
+    "@axios": resolve("src/axios"),
     "@components": resolve("src/components"),
     "@config": resolve("src/config"),
+    "@pages": resolve("src/pages"),
     "@resource": resolve("src/resource"),
     "@style": resolve("src/style"),
     "@utils": resolve("src/utils"),
-    "@pages": resolve("src/pages"),
-    "@axios": resolve("src/axios"),
   }),
 );

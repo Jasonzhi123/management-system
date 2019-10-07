@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Menu } from "antd";
 import { NavLink } from 'react-router-dom';
+
 import MenuConfig from "@config/menuConfig";
 import './index.less';
 const SubMenu = Menu.SubMenu;
@@ -34,7 +35,7 @@ export default class NavLeft extends Component {
     return (
       <div>
         <div className="logo">
-          <img className="logo-img" src="/assets/logo-ant.svg" alt="" />
+          <img className="logo-img" src={require("@assets/logo-ant.svg")} alt="" />
           <h1>Jason</h1>
         </div>
         <Menu theme="dark">

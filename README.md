@@ -25,8 +25,6 @@
 <!--more-->
 ### 代码目录
 ```js
-+-- build/                                  ---打包的文件目录
-+-- config/                                 ---npm run eject 后的配置文件目录
 +-- src/                                    ---核心代码目录
 |   +-- axios                               ---axios请求
 |   |    --- index.js                          ---axios 

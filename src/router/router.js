@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from '../pages/home';
-import Content from '../pages/layout/content';
-import Bottons from '../pages/ui/bottons';
-import Modals from "../pages/ui/modals";
-import Loadings from "../pages/ui/loadings";
-import Messages from "../pages/ui/messages";
-import Notice from "../pages/ui/notice";
-import Tabs from "../pages/ui/tabs";
-import Gallery from "../pages/ui/gallery";
-import Carousel from "../pages/ui/carousel";
-import NoMatch from '../pages/nomatch';
-import FormLogin from '../pages/form/login';
-import Register from '../pages/form/register';
-import BasicTable from '../pages/table/basicTable';
-import HighTable from '../pages/table/highTable';
-import Rich from '../pages/rich';
-import City from '../pages/city';
-import Order from '../pages/order';
-import User from '../pages/user';
-import Bar from '../pages/charts/bar/index'
-import Pie from '../pages/charts/pie/index'
-import Line from '../pages/charts/line/index';
-import Permission from '../pages/permission';
-import BikeMap from '../pages/map/bikeMap';
+import Home from '@pages/home';
+import Content from '@pages/layout/content';
+import Bottons from '@pages/ui/bottons';
+import Modals from "@pages/ui/modals";
+import Loadings from "@pages/ui/loadings";
+import Messages from "@pages/ui/messages";
+import Notice from "@pages/ui/notice";
+import Tabs from "@pages/ui/tabs";
+import Gallery from "@pages/ui/gallery";
+import Carousel from "@pages/ui/carousel";
+import NoMatch from '@pages/nomatch';
+import FormLogin from '@pages/form/login';
+import Register from '@pages/form/register';
+import BasicTable from '@pages/table/basicTable';
+import HighTable from '@pages/table/highTable';
+import Rich from '@pages/rich';
+import City from '@pages/city';
+import Order from '@pages/order';
+import User from '@pages/user';
+import Bar from '@pages/charts/bar/index'
+import Pie from '@pages/charts/pie/index'
+import Line from '@pages/charts/line/index';
+import Permission from '@pages/permission';
+import BikeMap from '@pages/map/bikeMap';
 
 export default class IRouter extends Component {
   render() {
