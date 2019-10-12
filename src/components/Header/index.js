@@ -11,7 +11,6 @@ export default class Header extends Component {
 
   componentDidMount() {
     this.timeState = setInterval(() => {
-      console.log('dsaf');
       this.setState({
         sysTime: moment().format('YYYY-MM-DD HH:mm:ss')
       })
@@ -38,9 +37,9 @@ export default class Header extends Component {
               </Col> : ''
           }
           <Col span={menuType ? 18 : 24}>
-            <div>
+            <div className="flex-align-center flex-end">
               <span>欢迎，{userName}</span>
-              <span onClick={this.signOut.bind(this)}>退出</span>
+              <button className="signBtn nobutton" onClick={this.signOut.bind(this)}>退出</button>
             </div>
           </Col>
         </Row>
